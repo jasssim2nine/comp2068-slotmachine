@@ -97,6 +97,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\images\betMaxButton.png" />
+    <Content Include="assets\images\betOneButton.png" />
+    <Content Include="assets\images\graphic-cordinates.txt" />
+    <Content Include="assets\images\reset-button.png" />
+    <Content Include="assets\images\slot-machine.png" />
+    <Content Include="assets\images\spin-button.png" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
