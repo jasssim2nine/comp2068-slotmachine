@@ -1,12 +1,12 @@
-﻿var canvas;
-var stage: createjs.Stage;
+var canvas;
+var stage;
 //game Objects
-var game: createjs.Container;
-var background: createjs.Bitmap;
-var spinButton: createjs.Bitmap;
-var betMaxButton: createjs.Bitmap;
-var betOneButton: createjs.Bitmap;
-var resetButton: createjs.Bitmap;
+var game;
+var background;
+var spinButton;
+var betMaxButton;
+var betOneButton;
+var resetButton;
 function init() {
     canvas = document.getElementById("canvas");
     stage = new createjs.Stage(canvas);
@@ -28,7 +28,7 @@ function spinReels() {
     //spin reels code here
     console.log("spin button clicked");
 }
-function createUI(): void{
+function createUI() {
     //instantiate my background
     background = new createjs.Bitmap("assets/images/slot-machine.png");
     game.addChild(background);
@@ -48,11 +48,11 @@ function createUI(): void{
     betOneButton = new createjs.Bitmap("assets/images/betOneButton.png");
     betOneButton.x = 180;
     betOneButton.y = 391;
-    game.addChild(betOneButton)
+    game.addChild(betOneButton);
     resetButton = new createjs.Bitmap("assets/images/reset-button.png");
     resetButton.x = 55;
     resetButton.y = 388;
-    game.addChild(resetButton)
+    game.addChild(resetButton);
 }
 function main() {
     //instantiate my game container
