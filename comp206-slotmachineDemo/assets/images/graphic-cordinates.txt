@@ -1,19 +1,19 @@
 Graphic		start x		start y		width		height
-background	0		0		406		443
+background	0		0		406		439
 
-spinbutton	349		416		46		46
+spinbutton	323		376		46		46
 
-betMaxbutton	235		407		40		40
+betMaxbutton	212		380		40		40
 
-betOnebutton	180		411		40		40
+betOnebutton	155		380		40		40
 
-resetButton	55		414		40		40
+resetButton	38		380		40		40
 
-reel1		56		172		85		105
+reel1		57		165		85		105
 
-reel2		161		172		85		105							
+reel2		162		165		85		105							
 
-reel3		266		172		85		105	
+reel3		267		165		85		105	
 
 Tile1		59		188		80		60
 

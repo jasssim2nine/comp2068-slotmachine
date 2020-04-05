@@ -7,6 +7,10 @@ var spinButton: createjs.Bitmap;
 var betMaxButton: createjs.Bitmap;
 var betOneButton: createjs.Bitmap;
 var resetButton: createjs.Bitmap;
+var tiles: createjs.Bitmap[] = [];
+var tileContainers: createjs.Container[] = [];
+
+//Game variables
 var playerMoney = 1000;
 var winnings = 0;
 var jackpot = 5000;
@@ -17,6 +21,8 @@ var lossNumber = 0;
 var spinResult;
 var fruits = "";
 var winRatio = 0;
+
+//Fruit tally
 var grapes = 0;
 var bananas = 0;
 var oranges = 0;
@@ -61,7 +67,22 @@ function spinReels() {
 
     spinResult = Reels();
     fruits = spinResult[0] + " - " + spinResult[1] + " - " + spinResult[2];
+
     console.log(fruits);
+    
+    for (var tile = 0; tile < 3; tile++) {
+        if (turn > 0) {
+            game.removeChild(tiles[tile]);
+
+        }
+        tiles[tile] = new createjs.Bitmap("assets/images/" + spinResult[tile] + ".png");
+     
+        tiles[tile].x = 68 + (108 * tile);
+        tiles[tile].y = 188;
+        
+        game.addChild(tiles[tile]);
+      
+    }
 }
 
 /* Utility function to check if a value falls within a range of bounds */
@@ -89,31 +110,31 @@ function Reels() {
                 blanks++;
                 break;
             case checkRange(outCome[spin], 28, 37): // 15.4% probability
-                betLine[spin] = "Grapes";
-                grapes++;
+                betLine[spin] = "grape";
+                grapes++
                 break;
             case checkRange(outCome[spin], 38, 46): // 13.8% probability
-                betLine[spin] = "Banana";
+                betLine[spin] = "banana";
                 bananas++;
                 break;
             case checkRange(outCome[spin], 47, 54): // 12.3% probability
-                betLine[spin] = "Orange";
+                betLine[spin] = "orange";
                 oranges++;
                 break;
             case checkRange(outCome[spin], 55, 59): //  7.7% probability
-                betLine[spin] = "Cherry";
+                betLine[spin] = "cherry";
                 cherries++;
                 break;
             case checkRange(outCome[spin], 60, 62): //  4.6% probability
-                betLine[spin] = "Bar";
+                betLine[spin] = "bar";
                 bars++;
                 break;
             case checkRange(outCome[spin], 63, 64): //  3.1% probability
-                betLine[spin] = "Bell";
+                betLine[spin] = "bell";
                 bells++;
                 break;
             case checkRange(outCome[spin], 65, 65): //  1.5% probability
-                betLine[spin] = "Seven";
+                betLine[spin] = "seven";
                 sevens++;
                 break;
         }
@@ -189,24 +210,24 @@ function createUI(): void{
     //spinbutton
     spinButton = new createjs.Bitmap("assets/images/spin-button.png");
     spinButton.x = 323;
-    spinButton.y = 384;
+    spinButton.y = 376;
     game.addChild(spinButton);
     spinButton.addEventListener("click", spinReels);
     spinButton.addEventListener("mouseover", spinButtonOver);
     spinButton.addEventListener("mouseout", spinButtonOut);
     //betMax button
-    betMaxButton = new createjs.Bitmap("assets/images/betMaxButton.png");
-    betMaxButton.x = 235;
-    betMaxButton.y = 391;
+   /** betMaxButton = new createjs.Bitmap("assets/images/betMaxButton.png");
+    betMaxButton.x = 212;
+    betMaxButton.y = 380;
     game.addChild(betMaxButton);
     betOneButton = new createjs.Bitmap("assets/images/betOneButton.png");
-    betOneButton.x = 180;
-    betOneButton.y = 391;
+    betOneButton.x = 155;
+    betOneButton.y = 380;
     game.addChild(betOneButton)
     resetButton = new createjs.Bitmap("assets/images/reset-button.png");
-    resetButton.x = 55;
-    resetButton.y = 388;
-    game.addChild(resetButton)
+    resetButton.x = 38;
+    resetButton.y = 380;
+    game.addChild(resetButton)**/
 }
 function main() {
     //instantiate my game container
